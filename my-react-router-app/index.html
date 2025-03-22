@@ -1,13 +1,197 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/src/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Search Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6d28d9',
+                        secondary: '#4f46e5',
+                        accent: '#ec4899',
+                        highlight: '#f59e0b',
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s ease infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+<body class="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100">
+    <!-- Header -->
+    <header class="container mx-auto p-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <h1 class="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-gradient">search<span class="text-accent">Hub!</span></h1>
+            </div>
+            
+            <!-- Right Icons -->
+            <div class="flex items-center space-x-6">
+                <button class="text-gray-700 hover:text-primary transition-colors">
+                    <i class="fas fa-envelope text-xl"></i>
+                </button>
+                <button class="text-gray-700 hover:text-primary transition-colors">
+                    <i class="fas fa-th text-xl"></i>
+                </button>
+                <div class="flex items-center bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-md">
+                    <i class="fas fa-cloud-sun text-highlight mr-2"></i>
+                    <span class="text-xl font-semibold">23°C</span>
+                    <span class="ml-2 text-sm text-gray-600">Barasat</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 pt-8 pb-16">
+        <!-- Greeting -->
+        <div class="text-center mb-8">
+            <h2 class="text-4xl font-bold text-gray-800 mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Good evening!</h2>
+            <p class="text-gray-600">Today is March 22, 2025</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="max-w-3xl mx-auto mb-8">
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <i class="fas fa-search text-gray-400"></i>
+                </div>
+                <input type="text" placeholder="Search the web" class="w-full pl-12 pr-16 py-4 rounded-full border-2 border-primary/30 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50 shadow-lg text-lg">
+                <button class="absolute inset-y-0 right-0 pr-4 flex items-center">
+                    <i class="fas fa-microphone text-primary hover:text-accent transition-colors"></i>
+                </button>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="flex justify-center mt-6 space-x-2">
+                <button class="bg-white/80 backdrop-blur-sm hover:bg-white px-4 py-2 rounded-full shadow-md transition-all hover:shadow-lg flex items-center space-x-1 text-gray-700 hover:text-primary">
+                    <i class="fas fa-bell"></i>
+                    <span>Alerts</span>
+                </button>
+                <button class="bg-white/80 backdrop-blur-sm hover:bg-white px-4 py-2 rounded-full shadow-md transition-all hover:shadow-lg flex items-center space-x-1 text-gray-700 hover:text-primary">
+                    <i class="fas fa-volume-up"></i>
+                    <span>Audio</span>
+                </button>
+                <button class="bg-white/80 backdrop-blur-sm hover:bg-white px-4 py-2 rounded-full shadow-md transition-all hover:shadow-lg flex items-center space-x-1 text-gray-700 hover:text-primary">
+                    <i class="fas fa-ellipsis-h"></i>
+                    <span>More</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation Icons -->
+        <div class="flex justify-center flex-wrap gap-4 mb-12">
+            <a href="#" class="flex flex-col items-center p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all w-24 group">
+                <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-primary to-secondary rounded-full mb-2 text-white">
+                    <i class="fas fa-cricket-ball-bat"></i>
+                </div>
+                <span class="text-gray-700 group-hover:text-primary transition-colors">Cricket</span>
+            </a>
+            <a href="#" class="flex flex-col items-center p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all w-24 group">
+                <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-secondary to-accent rounded-full mb-2 text-white">
+                    <i class="fas fa-film"></i>
+                </div>
+                <span class="text-gray-700 group-hover:text-secondary transition-colors">Movies</span>
+            </a>
+            <a href="#" class="flex flex-col items-center p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all w-24 group">
+                <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-accent to-highlight rounded-full mb-2 text-white">
+                    <i class="fas fa-newspaper"></i>
+                </div>
+                <span class="text-gray-700 group-hover:text-accent transition-colors">News</span>
+            </a>
+            <a href="#" class="flex flex-col items-center p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all w-24 group">
+                <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-highlight to-primary rounded-full mb-2 text-white">
+                    <i class="fas fa-star"></i>
+                </div>
+                <span class="text-gray-700 group-hover:text-highlight transition-colors">Horoscope</span>
+            </a>
+        </div>
+
+        <!-- Trending Section -->
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden">
+                <div class="bg-gradient-to-r from-primary to-accent p-4">
+                    <h3 class="text-xl font-bold text-white flex items-center">
+                        <i class="fas fa-chart-line mr-2"></i> Trending now
+                    </h3>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-2 p-4">
+                    <!-- Left Column -->
+                    <div class="space-y-3">
+                        <div class="flex items-center group hover:bg-purple-50 p-2 rounded-lg transition-colors">
+                            <span class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mr-3 font-bold">1</span>
+                            <a href="#" class="text-gray-700 group-hover:text-primary transition-colors">Amit Shah</a>
+                        </div>
+                        <div class="flex items-center group hover:bg-purple-50 p-2 rounded-lg transition-colors">
+                            <span class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mr-3 font-bold">2</span>
+                            <a href="#" class="text-gray-700 group-hover:text-primary transition-colors">Delimitation Meet</a>
+                        </div>
+                        <div class="flex items-center group hover:bg-purple-50 p-2 rounded-lg transition-colors">
+                            <span class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mr-3 font-bold">3</span>
+                            <a href="#" class="text-gray-700 group-hover:text-primary transition-colors">Karnataka Bandh</a>
+                        </div>
+                        <div class="flex items-center group hover:bg-purple-50 p-2 rounded-lg transition-colors">
+                            <span class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mr-3 font-bold">4</span>
+                            <a href="#" class="text-gray-700 group-hover:text-primary transition-colors">Yashwant Verma</a>
+                        </div>
+                        <div class="flex items-center group hover:bg-purple-50 p-2 rounded-lg transition-colors">
+                            <span class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mr-3 font-bold">5</span>
+                            <a href="#" class="text-gray-700 group-hover:text-primary transition-colors">Chandrababu Naidu</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div class="space-y-3">
+                        <div class="flex items-center group hover:bg-purple-50 p-2 rounded-lg transition-colors">
+                            <span class="w-8 h-8 flex items-center justify-center bg-accent text-white rounded-full mr-3 font-bold">6</span>
+                            <a href="#" class="text-gray-700 group-hover:text-accent transition-colors">Osama Tabash</a>
+                        </div>
+                        <div class="flex items-center group hover:bg-purple-50 p-2 rounded-lg transition-colors">
+                            <span class="w-8 h-8 flex items-center justify-center bg-accent text-white rounded-full mr-3 font-bold">7</span>
+                            <a href="#" class="text-gray-700 group-hover:text-accent transition-colors">Avneet Kaur</a>
+                        </div>
+                        <div class="flex items-center group hover:bg-purple-50 p-2 rounded-lg transition-colors">
+                            <span class="w-8 h-8 flex items-center justify-center bg-accent text-white rounded-full mr-3 font-bold">8</span>
+                            <a href="#" class="text-gray-700 group-hover:text-accent transition-colors">Ganesh Acharya</a>
+                        </div>
+                        <div class="flex items-center group hover:bg-purple-50 p-2 rounded-lg transition-colors">
+                            <span class="w-8 h-8 flex items-center justify-center bg-accent text-white rounded-full mr-3 font-bold">9</span>
+                            <a href="#" class="text-gray-700 group-hover:text-accent transition-colors">Varun Chakravarthy</a>
+                        </div>
+                        <div class="flex items-center group hover:bg-purple-50 p-2 rounded-lg transition-colors">
+                            <span class="w-8 h-8 flex items-center justify-center bg-accent text-white rounded-full mr-3 font-bold">10</span>
+                            <a href="#" class="text-gray-700 group-hover:text-accent transition-colors">IPL 2025</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container mx-auto p-4 text-center text-gray-600 mt-8">
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="#" class="hover:text-primary transition-colors">Privacy</a>
+            <a href="#" class="hover:text-primary transition-colors">Terms</a>
+            <a href="#" class="hover:text-primary transition-colors">About</a>
+            <a href="#" class="hover:text-primary transition-colors">Help</a>
+        </div>
+        <p>© 2025 SearchHub. All rights reserved.</p>
+    </footer>
 </body>
 </html>
